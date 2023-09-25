@@ -1,0 +1,112 @@
+[gd_scene load_steps=3 format=3 uid="uid://brh1m30jd2xlm"]
+
+[ext_resource type="Script" path="res://开始场景/gameStart.gd" id="1_hgfk2"]
+[ext_resource type="Texture2D" uid="uid://muvyq7iju52" path="res://资源/图片/bg.png" id="1_yxyfk"]
+
+[node name="gameStart" type="TextureRect"]
+offset_right = 648.0
+offset_bottom = 648.0
+texture = ExtResource("1_yxyfk")
+script = ExtResource("1_hgfk2")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(300, 200)
+layout_mode = 2
+alignment = 1
+
+[node name="ButtonCountLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "生成的格子数量"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ButtonCountEnterContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="Row" type="SpinBox" parent="CenterContainer/VBoxContainer/ButtonCountEnterContainer"]
+layout_mode = 2
+min_value = 1.0
+value = 1.0
+alignment = 2
+update_on_text_changed = true
+
+[node name="RowLabel" type="Label" parent="CenterContainer/VBoxContainer/ButtonCountEnterContainer"]
+custom_minimum_size = Vector2(40, 0)
+layout_mode = 2
+text = "行"
+vertical_alignment = 1
+
+[node name="Col" type="SpinBox" parent="CenterContainer/VBoxContainer/ButtonCountEnterContainer"]
+layout_mode = 2
+min_value = 1.0
+value = 1.0
+alignment = 2
+update_on_text_changed = true
+
+[node name="ColLabel" type="Label" parent="CenterContainer/VBoxContainer/ButtonCountEnterContainer"]
+layout_mode = 2
+text = "列"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Nothing" type="Control" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="DiamondCountLabel" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "生成的钻石数量"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DiamondCountEnterContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+alignment = 1
+
+[node name="DiamondCount" type="SpinBox" parent="CenterContainer/VBoxContainer/DiamondCountEnterContainer2"]
+layout_mode = 2
+min_value = 1.0
+max_value = 10000.0
+value = 1.0
+alignment = 2
+update_on_text_changed = true
+
+[node name="DiamondCountLabel" type="Label" parent="CenterContainer/VBoxContainer/DiamondCountEnterContainer2"]
+layout_mode = 2
+text = "颗"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Nothing2" type="Control" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+
+[node name="Start" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "开始游戏"
+icon_alignment = 1
+
+[node name="Load" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "读取游戏"
+
+[node name="Exit" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "结束游戏"
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Load" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

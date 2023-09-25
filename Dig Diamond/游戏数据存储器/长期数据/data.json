@@ -1,0 +1,16 @@
+{
+	"lastSaveTime":1695684022,
+	"Version":"1.0.0",
+	"data":{
+		"row":10,
+		"col":10,
+		"diamondCount":8,
+		"buttonTypeArray":[],
+		"diamondButtonIdArray":[],
+		"notFoundDiamondCount":1,
+		"notDigDiamondTimes":0,
+		"button_count":1,
+		"buttonStateArray":[],
+		"startTime":0,
+		"playTime":""
+	}}

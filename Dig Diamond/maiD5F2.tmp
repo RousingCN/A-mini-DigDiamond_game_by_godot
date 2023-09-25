@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://k02d44wl07vj"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_ebvt4"]
+[ext_resource type="PackedScene" uid="uid://brh1m30jd2xlm" path="res://开始场景/gameStart.tscn" id="2_ryrnu"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_ebvt4")
+
+[node name="gameStart" parent="." instance=ExtResource("2_ryrnu")]
+
+[connection signal="game_start" from="gameStart" to="." method="_on_game_start_game_start"]

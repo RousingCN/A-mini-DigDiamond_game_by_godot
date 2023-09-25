@@ -1,0 +1,102 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4xhwrf8siyjc"]
+
+[ext_resource type="Script" path="res://结算场景/gameOver.gd" id="1_8de3p"]
+[ext_resource type="Texture2D" uid="uid://muvyq7iju52" path="res://资源/图片/bg.png" id="1_hx21e"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0ahxg"]
+line_spacing = 50.0
+font_size = 24
+
+[node name="gameOver" type="TextureRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_hx21e")
+script = ExtResource("1_8de3p")
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+layout_mode = 2
+
+[node name="OverTitle" type="Label" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "游戏结束"
+label_settings = SubResource("LabelSettings_0ahxg")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "游戏难度："
+
+[node name="Label2" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+text = "自定义"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "方块数量："
+
+[node name="Label2" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "1X1"
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "钻石数量："
+
+[node name="Label2" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+text = "1"
+
+[node name="CostTimeBox" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="CostTimeTitle" type="Label" parent="CenterContainer/VBoxContainer/CostTimeBox"]
+layout_mode = 2
+text = "花费时长："
+
+[node name="CostTime" type="Label" parent="CenterContainer/VBoxContainer/CostTimeBox"]
+layout_mode = 2
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="InvalidExcavationTimesBox" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="InvalidExcavationTimesTitle" type="Label" parent="CenterContainer/VBoxContainer/InvalidExcavationTimesBox"]
+layout_mode = 2
+text = "无效挖掘："
+
+[node name="InvalidExcavationTimes" type="Label" parent="CenterContainer/VBoxContainer/InvalidExcavationTimesBox"]
+layout_mode = 2
+text = "0次"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ReturnToMain" type="Button" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+text = "返回主界面"
+icon_alignment = 1
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/ReturnToMain" to="." method="_on_return_to_main_pressed"]

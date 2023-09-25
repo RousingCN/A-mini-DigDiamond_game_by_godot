@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://k02d44wl07vj"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_ebvt4"]
+[ext_resource type="PackedScene" uid="uid://brh1m30jd2xlm" path="res://开始场景/gameStart.tscn" id="2_ryrnu"]
+[ext_resource type="PackedScene" uid="uid://b4xhwrf8siyjc" path="res://结算场景/gameOver.tscn" id="3_w24gv"]
+[ext_resource type="PackedScene" uid="uid://bhrcjniby014c" path="res://gamePane.tscn" id="4_dr1hi"]
+
+[node name="Main" type="Node"]
+script = ExtResource("1_ebvt4")
+
+[node name="gameStart" parent="." instance=ExtResource("2_ryrnu")]
+
+[node name="gameOver" parent="." instance=ExtResource("3_w24gv")]
+visible = false
+
+[node name="GamePanel" parent="." instance=ExtResource("4_dr1hi")]
+visible = false
+
+[connection signal="game_start" from="gameStart" to="." method="_on_game_start_game_start"]
+[connection signal="returnToMenu" from="gameOver" to="." method="_on_game_over_return_to_menu"]
+[connection signal="game_over" from="GamePanel" to="." method="_on_game_panel_game_over"]
