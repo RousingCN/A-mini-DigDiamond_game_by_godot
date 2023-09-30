@@ -1,5 +1,4 @@
 # A-mini-DigDiamond_game_by_godot
----
 
 ### gameStart  
 ![gameStart](https://github.com/RousingCN/A-mini-DigDiamond_game_by_godot/assets/82033699/55abbe57-95e2-42be-b25c-a66b23cf11ca)
