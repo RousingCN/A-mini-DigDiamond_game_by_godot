@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://brh1m30jd2xlm"]
+[gd_scene load_steps=9 format=3 uid="uid://brh1m30jd2xlm"]
 
 [ext_resource type="Script" path="res://开始场景/gameStart.gd" id="1_hgfk2"]
 [ext_resource type="Texture2D" uid="uid://muvyq7iju52" path="res://资源/图片/bg.png" id="1_yxyfk"]
@@ -6,6 +6,12 @@
 [ext_resource type="LabelSettings" uid="uid://bkjppqsnbovqd" path="res://资源/字体/label_settings.tres" id="4_aajj6"]
 [ext_resource type="Theme" uid="uid://25kjm1yjm6l5" path="res://资源/字体/number_input.tres" id="5_rmdbu"]
 [ext_resource type="Theme" uid="uid://b2cp72s3ew2bu" path="res://资源/字体/button.tres" id="6_0cale"]
+[ext_resource type="FontFile" uid="uid://c7ub61rbtiye7" path="res://资源/字体/unifont-15.1.02.otf" id="6_h81dh"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rxidm"]
+font = ExtResource("6_h81dh")
+font_size = 20
+font_color = Color(0.882353, 0.270588, 0.270588, 1)
 
 [node name="gameStart" type="TextureRect"]
 anchors_preset = 15
@@ -60,6 +66,7 @@ theme = ExtResource("5_rmdbu")
 min_value = 1.0
 value = 1.0
 alignment = 2
+update_on_text_changed = true
 
 [node name="RowLabel" type="Label" parent="CenterContainer/VBoxContainer/ButtonCountEnterContainer"]
 custom_minimum_size = Vector2(40, 0)
@@ -74,6 +81,7 @@ theme = ExtResource("5_rmdbu")
 min_value = 1.0
 value = 1.0
 alignment = 2
+update_on_text_changed = true
 
 [node name="ColLabel" type="Label" parent="CenterContainer/VBoxContainer/ButtonCountEnterContainer"]
 layout_mode = 2
@@ -106,6 +114,7 @@ min_value = 1.0
 max_value = 10000.0
 value = 1.0
 alignment = 2
+update_on_text_changed = true
 
 [node name="DiamondCountLabel" type="Label" parent="CenterContainer/VBoxContainer/DiamondCountEnterContainer2"]
 layout_mode = 2
@@ -114,9 +123,12 @@ label_settings = ExtResource("4_aajj6")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Nothing2" type="Control" parent="CenterContainer/VBoxContainer"]
+[node name="ErrorTips" type="Label" parent="CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
+label_settings = SubResource("LabelSettings_rxidm")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="Start" type="Button" parent="CenterContainer/VBoxContainer"]
 custom_minimum_size = Vector2(0, 50)
@@ -137,6 +149,9 @@ layout_mode = 2
 theme = ExtResource("6_0cale")
 text = "结束游戏"
 
+[connection signal="value_changed" from="CenterContainer/VBoxContainer/ButtonCountEnterContainer/Row" to="." method="_on_row_value_changed"]
+[connection signal="value_changed" from="CenterContainer/VBoxContainer/ButtonCountEnterContainer/Col" to="." method="_on_col_value_changed"]
+[connection signal="value_changed" from="CenterContainer/VBoxContainer/DiamondCountEnterContainer2/DiamondCount" to="." method="_on_diamond_count_value_changed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Load" to="." method="_on_load_pressed"]
 [connection signal="pressed" from="CenterContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]

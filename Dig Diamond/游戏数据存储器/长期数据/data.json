@@ -1,9 +1,9 @@
 {
-	"lastSaveTime":1696081813,
+	"lastSaveTime":1696083973,
 	"Version":"1.0.0",
 	"data":{
-		"row":20,
-		"col":20,
+		"row":15,
+		"col":15,
 		"diamondCount":50,
 		"buttonTypeArray":[],
 		"diamondButtonIdArray":[],
