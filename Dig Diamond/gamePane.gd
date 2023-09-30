@@ -85,3 +85,4 @@ func _on_mark_type_pressed():
 	$PanelHead/DigType.visible=true
 	$PanelHead/MarkType.visible=false
 	markType=false
+

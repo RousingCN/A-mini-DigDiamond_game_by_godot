@@ -267,3 +267,11 @@ func _on_button_mouse_exited():
 		bedrock.visible=false
 		diamond.visible=false
 		buttonState=STONE_MARK
+
+
+func _on_button_button_down():
+	_on_button_mouse_entered()
+
+
+func _on_button_button_up():
+	_on_button_mouse_exited()

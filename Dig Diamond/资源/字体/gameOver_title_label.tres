@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://wmh33p0yv181"]
+
+[ext_resource type="FontFile" uid="uid://c7ub61rbtiye7" path="res://资源/字体/unifont-15.1.02.otf" id="1_b5ur5"]
+
+[resource]
+font = ExtResource("1_b5ur5")
+font_size = 30
+shadow_size = 2
+shadow_color = Color(0, 0, 0, 1)

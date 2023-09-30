@@ -1,11 +1,20 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4xhwrf8siyjc"]
+[gd_scene load_steps=9 format=3 uid="uid://b4xhwrf8siyjc"]
 
 [ext_resource type="Script" path="res://结算场景/gameOver.gd" id="1_8de3p"]
 [ext_resource type="Texture2D" uid="uid://muvyq7iju52" path="res://资源/图片/bg.png" id="1_hx21e"]
+[ext_resource type="Texture2D" uid="uid://c3cs8a4pmsusk" path="res://资源/图片/panel_bg.png" id="3_2t6wx"]
+[ext_resource type="FontFile" uid="uid://c7ub61rbtiye7" path="res://资源/字体/unifont-15.1.02.otf" id="4_5rq73"]
+[ext_resource type="LabelSettings" uid="uid://wmh33p0yv181" path="res://资源/字体/gameOver_title_label.tres" id="5_iqo5g"]
+[ext_resource type="LabelSettings" uid="uid://b1yiok4dt8rj3" path="res://资源/字体/gameOver_result_label.tres" id="6_iyyvm"]
+[ext_resource type="Theme" uid="uid://b2cp72s3ew2bu" path="res://资源/字体/button.tres" id="7_16kvj"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_0ahxg"]
-line_spacing = 50.0
-font_size = 24
+[sub_resource type="LabelSettings" id="LabelSettings_ywvdq"]
+line_spacing = 10.0
+font = ExtResource("4_5rq73")
+font_size = 60
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 4
+shadow_color = Color(0, 0, 0, 1)
 
 [node name="gameOver" type="TextureRect"]
 anchors_preset = 15
@@ -14,88 +23,145 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("1_hx21e")
+expand_mode = 1
+stretch_mode = 1
 script = ExtResource("1_8de3p")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -275.0
+offset_right = 200.0
+offset_bottom = 275.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
 layout_mode = 2
+texture = ExtResource("3_2t6wx")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
+custom_minimum_size = Vector2(350, 450)
+layout_mode = 2
+alignment = 1
 
 [node name="OverTitle" type="Label" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
 layout_mode = 2
 text = "游戏结束"
-label_settings = SubResource("LabelSettings_0ahxg")
+label_settings = SubResource("LabelSettings_ywvdq")
 horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+visible = false
 layout_mode = 2
 
 [node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "游戏难度："
+label_settings = ExtResource("5_iqo5g")
 
 [node name="Label2" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
 text = "自定义"
+label_settings = ExtResource("6_iyyvm")
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
+[node name="buttonCountTitle" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
 text = "方块数量："
+label_settings = ExtResource("5_iqo5g")
+horizontal_alignment = 2
 
-[node name="Label2" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
+[node name="buttonCount" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "1X1"
+label_settings = ExtResource("6_iyyvm")
+
+[node name="nothing2" type="Control" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
 
 [node name="HBoxContainer3" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3"]
+[node name="diamondCountTitle" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
 text = "钻石数量："
+label_settings = ExtResource("5_iqo5g")
+horizontal_alignment = 2
 
-[node name="Label2" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3"]
+[node name="diamonCount" type="Label" parent="CenterContainer/VBoxContainer/HBoxContainer3"]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "1"
+label_settings = ExtResource("6_iyyvm")
+
+[node name="nothing4" type="Control" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
 
 [node name="CostTimeBox" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="CostTimeTitle" type="Label" parent="CenterContainer/VBoxContainer/CostTimeBox"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
 text = "花费时长："
+label_settings = ExtResource("5_iqo5g")
+horizontal_alignment = 2
 
 [node name="CostTime" type="Label" parent="CenterContainer/VBoxContainer/CostTimeBox"]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "0"
-horizontal_alignment = 1
+label_settings = ExtResource("6_iyyvm")
 vertical_alignment = 1
+
+[node name="nothing3" type="Control" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
 
 [node name="InvalidExcavationTimesBox" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
 layout_mode = 2
 
 [node name="InvalidExcavationTimesTitle" type="Label" parent="CenterContainer/VBoxContainer/InvalidExcavationTimesBox"]
 layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 1.5
 text = "无效挖掘："
+label_settings = ExtResource("5_iqo5g")
+horizontal_alignment = 2
 
 [node name="InvalidExcavationTimes" type="Label" parent="CenterContainer/VBoxContainer/InvalidExcavationTimesBox"]
 layout_mode = 2
+size_flags_horizontal = 3
 text = "0次"
-horizontal_alignment = 1
+label_settings = ExtResource("6_iyyvm")
 vertical_alignment = 1
 
-[node name="ReturnToMain" type="Button" parent="CenterContainer/VBoxContainer"]
+[node name="nothing" type="Control" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
 layout_mode = 2
+
+[node name="ReturnToMain" type="Button" parent="CenterContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme = ExtResource("7_16kvj")
 text = "返回主界面"
 icon_alignment = 1
 

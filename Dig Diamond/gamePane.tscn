@@ -1,8 +1,18 @@
-[gd_scene load_steps=4 format=3 uid="uid://bhrcjniby014c"]
+[gd_scene load_steps=14 format=3 uid="uid://bhrcjniby014c"]
 
 [ext_resource type="Script" path="res://gamePane.gd" id="1_lsthh"]
+[ext_resource type="Texture2D" uid="uid://cqaah7byeoksh" path="res://资源/图片/game_panel_left.png" id="2_gy8xm"]
 [ext_resource type="Texture2D" uid="uid://2w4mctriq0u5" path="res://资源/图片/diamond_pickaxe.png" id="2_saivs"]
-[ext_resource type="Texture2D" uid="uid://ca22iwtlmy3sq" path="res://资源/图片/oak_sign.png" id="3_kbhlr"]
+[ext_resource type="Texture2D" uid="uid://hixsaheaxxdx" path="res://资源/图片/game_panel_top.png" id="3_fpyhf"]
+[ext_resource type="Texture2D" uid="uid://b3yv6euqwc6yd" path="res://资源/图片/game_panel_right.png" id="3_iiskb"]
+[ext_resource type="Theme" uid="uid://b2cp72s3ew2bu" path="res://资源/字体/button.tres" id="3_jjufj"]
+[ext_resource type="Texture2D" uid="uid://wli714g81saa" path="res://资源/图片/mark.png" id="3_nef01"]
+[ext_resource type="Texture2D" uid="uid://dgo7lygqj7qam" path="res://资源/图片/game_panel_bottom.png" id="4_4oaxh"]
+[ext_resource type="LabelSettings" uid="uid://wmh33p0yv181" path="res://资源/字体/gameOver_title_label.tres" id="4_wt3q8"]
+[ext_resource type="Texture2D" uid="uid://bjmamgmjv4i6o" path="res://资源/图片/game_panel_left_top.png" id="6_7l4qm"]
+[ext_resource type="Texture2D" uid="uid://c5x6tfnhp54x5" path="res://资源/图片/game_panel_left_bottom.png" id="6_il5fp"]
+[ext_resource type="Texture2D" uid="uid://c1vq2keyqn3t5" path="res://资源/图片/game_panel_right_top.png" id="7_aibqb"]
+[ext_resource type="Texture2D" uid="uid://bxk63xfu4tume" path="res://资源/图片/game_panel_right_bottom.png" id="9_1xukw"]
 
 [node name="GamePanel" type="Control"]
 layout_mode = 3
@@ -13,25 +23,114 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lsthh")
 
+[node name="panel_left_img" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_right = 40.0
+grow_vertical = 2
+texture = ExtResource("2_gy8xm")
+
+[node name="panel_right_img2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 11
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 0
+grow_vertical = 2
+texture = ExtResource("3_iiskb")
+
+[node name="panel_top_img" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_bottom = 150.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_fpyhf")
+expand_mode = 2
+
+[node name="panel_bottom_img" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -70.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_4oaxh")
+expand_mode = 2
+
+[node name="panel_left_top_img" type="TextureRect" parent="."]
+layout_mode = 1
+offset_right = 40.0
+offset_bottom = 150.0
+texture = ExtResource("6_7l4qm")
+
+[node name="panel_right_top_img2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 150.0
+grow_horizontal = 0
+texture = ExtResource("7_aibqb")
+
+[node name="panel_left_bottom_img3" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -50.0
+offset_right = 40.0
+grow_vertical = 0
+texture = ExtResource("6_il5fp")
+
+[node name="panel_right_bottom_img4" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -50.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("9_1xukw")
+stretch_mode = 2
+
 [node name="PanelHead" type="HBoxContainer" parent="."]
 clip_contents = true
-custom_minimum_size = Vector2(0, 64)
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = -1
 anchor_right = 1.0
-offset_bottom = 72.0
+offset_left = 40.0
+offset_top = 30.0
+offset_right = -40.0
+offset_bottom = 110.0
 grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 2
+mouse_default_cursor_shape = 2
+theme_override_constants/separation = 10
 alignment = 1
 
 [node name="Menu" type="Button" parent="PanelHead"]
-custom_minimum_size = Vector2(100, 64)
 layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_jjufj")
 text = "主菜单"
 icon_alignment = 1
 
 [node name="DigType" type="Button" parent="PanelHead"]
 layout_mode = 2
 size_flags_horizontal = 3
+theme = ExtResource("3_jjufj")
 icon = ExtResource("2_saivs")
 clip_text = true
 icon_alignment = 1
@@ -40,52 +139,64 @@ icon_alignment = 1
 visible = false
 layout_mode = 2
 size_flags_horizontal = 3
-icon = ExtResource("3_kbhlr")
+theme = ExtResource("3_jjufj")
+icon = ExtResource("3_nef01")
 icon_alignment = 1
 
 [node name="ReSet" type="Button" parent="PanelHead"]
-custom_minimum_size = Vector2(100, 64)
 layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("3_jjufj")
 text = "重置游戏"
 
 [node name="ScrollContainer" type="ScrollContainer" parent="."]
-custom_minimum_size = Vector2(64, 64)
-layout_mode = 2
-offset_left = 10.0
-offset_top = 84.0
-offset_right = 638.0
-offset_bottom = 604.0
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 40.0
+offset_top = 150.0
+offset_right = -40.0
+offset_bottom = -70.0
+grow_horizontal = 2
+grow_vertical = 2
 follow_focus = true
 
 [node name="MainPanel" type="GridContainer" parent="ScrollContainer"]
-custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 6
 theme_override_constants/h_separation = 0
 theme_override_constants/v_separation = 0
 
 [node name="PanelFooter" type="HBoxContainer" parent="."]
 layout_mode = 1
-anchors_preset = 12
+anchors_preset = -1
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -44.0
-offset_bottom = -4.0
+offset_left = 40.0
+offset_top = -70.0
+offset_right = -40.0
+offset_bottom = -20.0
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
 alignment = 1
 
 [node name="ButtonCount" type="Label" parent="PanelFooter"]
 layout_mode = 2
 size_flags_horizontal = 3
-size_flags_vertical = 1
 text = "  难度"
+label_settings = ExtResource("4_wt3q8")
 vertical_alignment = 1
 
 [node name="NotFoundDiamondCount" type="Label" parent="PanelFooter"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "未发掘钻石"
+label_settings = ExtResource("4_wt3q8")
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -93,6 +204,7 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_horizontal = 3
 text = "时间  "
+label_settings = ExtResource("4_wt3q8")
 horizontal_alignment = 2
 vertical_alignment = 1
 

@@ -22,6 +22,11 @@ var notFoundDiamondCountShow:Label
 var rowBox:SpinBox
 var colBox:SpinBox
 var diamondCountBox:SpinBox
+var buttonCountLabel:Label
+var diamondCountLabel:Label
+var costTimeLabel:Label
+var invalidExcavationTimesLabel:Label
+
 
 # 初始化游戏数据
 func initDiamondArray():

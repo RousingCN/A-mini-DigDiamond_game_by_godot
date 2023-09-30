@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://b1yiok4dt8rj3"]
+
+[ext_resource type="FontFile" uid="uid://c7ub61rbtiye7" path="res://资源/字体/unifont-15.1.02.otf" id="1_scn7j"]
+
+[resource]
+font = ExtResource("1_scn7j")
+font_size = 24
+shadow_color = Color(0, 0, 0, 0.67451)

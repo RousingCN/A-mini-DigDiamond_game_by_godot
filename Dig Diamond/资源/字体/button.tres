@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://b2cp72s3ew2bu"]
+
+[ext_resource type="FontFile" uid="uid://c7ub61rbtiye7" path="res://资源/字体/unifont-15.1.02.otf" id="1_s81by"]
+
+[resource]
+default_font = ExtResource("1_s81by")
+default_font_size = 26

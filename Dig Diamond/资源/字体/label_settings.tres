@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://bkjppqsnbovqd"]
+
+[ext_resource type="FontFile" uid="uid://c7ub61rbtiye7" path="res://资源/字体/unifont-15.1.02.otf" id="1_v7yqj"]
+
+[resource]
+line_spacing = 10.0
+font = ExtResource("1_v7yqj")
+font_size = 34
+shadow_color = Color(0, 0, 0, 1)
